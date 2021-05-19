@@ -1,16 +1,11 @@
-# coding=utf-8
-from tempfile import mkdtemp
-
 import numpy as np
 import scipy.sparse as sp
 from sklearn.utils import shuffle
 
-from kantar.cluster.base import spectral_coclustering
-
-tmpdir = mkdtemp()
+from koino.cluster.base import spectral_coclustering
 
 
-def test_spectral():
+def test_spectral(tmpdir):
     A = sp.coo_matrix(
         [
             [3, 3, 2, 2, 1, 1],
@@ -28,7 +23,7 @@ def test_spectral():
     assert score <= 0.15
 
 
-def test_spectral_binary():
+def test_spectral_binary(tmpdir):
     A = sp.coo_matrix(
         [
             [0, 0, 0, 0, 1, 1],
@@ -40,13 +35,10 @@ def test_spectral_binary():
         ]
     )
     B, score = spectral_coclustering(A.row, A.col, 3, tmpdir)
-    print()
-    print(B.A)
-    print(score)
     assert score == 0.
 
 
-def test_spectral_big():
+def test_spectral_big(tmpdir):
     # TODO: Add more more entries per row/column
     n = 2000
     rnd = np.random.rand(n, n) < 1 / n

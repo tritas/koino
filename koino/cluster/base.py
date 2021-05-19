@@ -12,7 +12,7 @@ from typing import Union
 import numpy as np
 import pandas as pd
 from joblib import Memory
-from kantar.plot.base import hist, matshow_colorbar
+from koino.plot.base import hist, matshow_colorbar
 from .stability import ClusteringAnalysis
 from scipy.sparse import csr_matrix, issparse, spmatrix
 from sklearn import cluster

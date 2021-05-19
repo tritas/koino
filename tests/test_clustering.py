@@ -6,10 +6,9 @@ import pytest
 from numpy import unique
 from sklearn.datasets import make_blobs
 
-from kantar.cluster.base import ClusteringAnalysis
-from kantar.cluster.base import vector_quantization
-from kantar.cluster.hierarchical import HierarchicalClustering
-from kantar.config import seed
+from koino.cluster.base import ClusteringAnalysis
+from koino.cluster.base import vector_quantization
+from koino.cluster.hierarchical import HierarchicalClustering
 
 logging.basicConfig(
     format="%(asctime)s : %(levelname)s : %(message)s", level=logging.DEBUG
@@ -19,6 +18,7 @@ tmpdir = mkdtemp()
 logging.info(tmpdir)
 
 n_samples = 1200
+seed = 42
 X, y = make_blobs(
     n_samples=n_samples, n_features=10, centers=13, random_state=seed
 )
@@ -53,7 +53,7 @@ def test_clustering_analysis(
 
 
 def test_no_vq():
-    labels, centroids = vector_quantization(X, X, tmpdir)
+    labels, centroids, _, _ = vector_quantization(X, X, tmpdir)
     assert labels is None
     assert centroids is None
 
@@ -63,7 +63,7 @@ def test_no_vq():
     [(10, None), (None, range(2, 4)), (None, range(3, 7, 2))],
 )
 def test_vq(n_clusters, span):
-    labels, centroids = vector_quantization(
+    labels, centroids, _, _ = vector_quantization(
         X, X, tmpdir, n_clusters, span, False
     )
     assert len(labels) == len(X)

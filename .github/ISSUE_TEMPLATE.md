@@ -1,4 +1,4 @@
-* Pnyx version:
+* Koino version:
 * Python version:
 * Operating System:
 

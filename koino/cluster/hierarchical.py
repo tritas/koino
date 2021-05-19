@@ -12,7 +12,7 @@ from sklearn.base import BaseEstimator
 from sklearn.base import ClusterMixin
 from sklearn.base import TransformerMixin
 
-from kantar.plot import big_square, rect_figsize
+from ..plot import big_square, rect_figsize
 
 try:
     from fastcluster import linkage

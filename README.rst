@@ -1,6 +1,6 @@
-====
-Pnyx
-====
+=====
+Koino
+=====
 
 
 .. image:: https://img.shields.io/pypi/v/koino.svg
@@ -20,7 +20,7 @@ Pnyx
 
 
 
-Pnyx provides tools to cluster, analyze and describe populations.
+Koino provides tools to cluster, analyze and describe populations.
 
 
 * Free software: BSD license

@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use Pnyx in a project::
+To use Koino in a project::
 
     import koino

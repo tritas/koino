@@ -9,7 +9,7 @@ import matplotlib.patheffects as PathEffects
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from kantar.plot import big_square, default_alpha
+from koino.plot import big_square, default_alpha
 from matplotlib import cm
 
 from ..utils.base import jaccard

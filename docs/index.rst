@@ -1,4 +1,4 @@
-Welcome to Pnyx's documentation!
+Welcome to Koino's documentation!
 ======================================
 
 .. toctree::

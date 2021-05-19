@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Top-level package for Pnyx."""
+"""Top-level package for Koino."""
 
 __author__ = """Aris Tritas"""
 __email__ = "a.tritas@gmail.com"
