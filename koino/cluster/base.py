@@ -48,7 +48,7 @@ def default_kmeans(
     verbose: int = 0,
     random_state: random_state_typ = None,
 ) -> KMeans:
-    """ Sensible defaults for clustering that is a tiny bit more robust.
+    """Sensible defaults for clustering that is a tiny bit more robust.
     Full-batch KMeans is unbearably slow for large datasets.
     Can init more than 100 times, how much time do you have?
     """
@@ -208,7 +208,7 @@ def spectral_coclustering(
     transparent=False,
     random_state: random_state_typ = None,
 ) -> Union[np.ndarray, spmatrix]:
-    """ Run spectral co-clustering on a sparse or dense matrix and
+    """Run spectral co-clustering on a sparse or dense matrix and
     visualize the result.
 
     Parameters
@@ -256,7 +256,7 @@ def vector_quantization(
     hac_dist: Optional[float] = None,
     **kwargs
 ) -> Tuple[np.ndarray, np.ndarray, int, ClusterMixin]:
-    """ Solve a vector quantization problem and optionally visualize
+    """Solve a vector quantization problem and optionally visualize
     clustering assignments.
 
     Parameters
@@ -305,19 +305,19 @@ def vector_quantization(
 def run_hdbscan(X_df, X_tsne, output_dir, transparent):
     """Cluster using density estimation
 
-     Parameters
-     ----------
-     X_df: DataFrame
-     X_tsne: array-like, [n_samples, 2]
-     output_dir: str, path
-     transparent: bool
+    Parameters
+    ----------
+    X_df: DataFrame
+    X_tsne: array-like, [n_samples, 2]
+    output_dir: str, path
+    transparent: bool
 
-     Returns
-     -------
-     clusterer: HDBSCAN object
-     assignments: numpy array of shape [n_samples,]
+    Returns
+    -------
+    clusterer: HDBSCAN object
+    assignments: numpy array of shape [n_samples,]
 
-     """
+    """
     from hdbscan import HDBSCAN
 
     clusterer = HDBSCAN(
@@ -348,7 +348,7 @@ def run_hdbscan(X_df, X_tsne, output_dir, transparent):
 def visualize_hdbscan(
     clusterer, X_projected, assignments, n_clusters, output_dir, transparent
 ):
-    """ Visualize HDBSCAN results
+    """Visualize HDBSCAN results
     Parameters
     ----------
     clusterer: object

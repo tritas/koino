@@ -35,7 +35,7 @@ def test_spectral_binary(tmpdir):
         ]
     )
     B, score = spectral_coclustering(A.row, A.col, 3, tmpdir)
-    assert score == 0.
+    assert score == 0.0
 
 
 def test_spectral_big(tmpdir):

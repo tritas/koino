@@ -19,9 +19,7 @@ logging.info(tmpdir)
 
 n_samples = 1200
 seed = 42
-X, y = make_blobs(
-    n_samples=n_samples, n_features=10, centers=13, random_state=seed
-)
+X, y = make_blobs(n_samples=n_samples, n_features=10, centers=13, random_state=seed)
 
 # transformation = [[0.60834549, -0.63667341], [-0.40887718, 0.85253229]]
 # X_aniso = np.dot(X, transformation)
@@ -37,9 +35,7 @@ def test_hac():
 
 
 @pytest.mark.skip(reason="no assertion at the end")
-def test_clustering_analysis(
-    span=range(10, 15), n_bootstrap=20, noise_std=0.5
-):
+def test_clustering_analysis(span=range(10, 15), n_bootstrap=20, noise_std=0.5):
     clst = ClusteringAnalysis(
         clusters_span=span,
         bootstrap=n_bootstrap,
@@ -63,8 +59,6 @@ def test_no_vq():
     [(10, None), (None, range(2, 4)), (None, range(3, 7, 2))],
 )
 def test_vq(n_clusters, span):
-    labels, centroids, _, _ = vector_quantization(
-        X, X, tmpdir, n_clusters, span, False
-    )
+    labels, centroids, _, _ = vector_quantization(X, X, tmpdir, n_clusters, span, False)
     assert len(labels) == len(X)
     assert len(centroids) == n_clusters

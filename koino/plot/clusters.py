@@ -88,10 +88,10 @@ def plot_silhouette(
 def plot_cluster_assignments(
     X, y, n_clusters, figures_dir, transparent=False, cluster_names=None, title=""
 ):
-    """ Clustering assignments scatter plot
+    """Clustering assignments scatter plot
     Notes
     -----
-    Can use mean or median to fix cluster centroid coordinates. """
+    Can use mean or median to fix cluster centroid coordinates."""
     if cluster_names is None:
         cluster_names = ["Cluster {}".format(i + 1) for i in range(n_clusters)]
 
@@ -154,7 +154,7 @@ def overlap_jaccard(
     blabel="purchases",
     transparent=False,
 ):
-    """ Compute and plot contingency tables based on set intersection and
+    """Compute and plot contingency tables based on set intersection and
     jaccard score.
 
     # TODO: Normaliser par len(sd_set) ou len(diet_set) ?

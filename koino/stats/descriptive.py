@@ -125,7 +125,7 @@ class ClusterDescriptiveStats(object):
 
         if num_stats_df is not None:
             # Round cluster stats
-            output_stats_df = num_stats_df.round(2).fillna(0.)
+            output_stats_df = num_stats_df.round(2).fillna(0.0)
             output_stats_df.to_latex(join(output_dir, "cluster_stats.tex"))
             output_stats_df.to_csv(join(output_dir, "cluster_stats.csv"))
             output_stats_df.to_html(join(output_dir, "cluster_stats.html"))
@@ -219,7 +219,7 @@ class ClusterDescriptiveStats(object):
             normed_stats_df = normalize(
                 stats_df.loc[:, (slice(None), "mean")], copy=False
             )
-            heatmap(normed_stats_df, ax=ax, linewidths=.5, annot=True)
+            heatmap(normed_stats_df, ax=ax, linewidths=0.5, annot=True)
             plt.yticks(rotation=0)
             plt.xticks(rotation=90)
             plt.tight_layout()

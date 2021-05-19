@@ -30,7 +30,7 @@ def compute_stability_metrics(
     bootstrap: int,
     noise_scale: float,
 ) -> List[Tuple[str, str, Tuple[float, float]]]:
-    """ We evaluate the adjusted mutual information score between a ground truth
+    """We evaluate the adjusted mutual information score between a ground truth
     clustering and perturbed versions of the dataset.
     We generate perturbation by adding isotropic gaussian noise, subsampling
     with and without replacement.
@@ -92,7 +92,6 @@ def compute_stability_metrics(
 
 
 class ClusteringAnalysis(BaseEstimator, ClusterMixin, TransformerMixin):
-
     def __init__(
         self,
         clustering_model: ClusterMixin,
@@ -100,7 +99,7 @@ class ClusteringAnalysis(BaseEstimator, ClusterMixin, TransformerMixin):
         bootstrap: int = 10,
         noise_scale: float = 0.1,
     ):
-        """ Estimator that seeks the optimal number of clusters for a given
+        """Estimator that seeks the optimal number of clusters for a given
         problem solved with kmeans++ and multiple restarts.
 
         Parameters
@@ -133,7 +132,7 @@ class ClusteringAnalysis(BaseEstimator, ClusterMixin, TransformerMixin):
         self.stability_metrics = defaultdict(lambda: defaultdict(list))
 
     def fit(self, X):
-        best_silhouette_score = 0.
+        best_silhouette_score = 0.0
         best_clst = None
         k_opt = -1
 
@@ -203,7 +202,7 @@ class ClusteringAnalysis(BaseEstimator, ClusterMixin, TransformerMixin):
         embeddings: Optional[np.ndarray] = None,
         alpha: Optional[float] = 0.5,
     ):
-        """ Visualize the clustering metrics.
+        """Visualize the clustering metrics.
 
         Parameters
         ----------

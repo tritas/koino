@@ -14,13 +14,15 @@ k = 10
 weights = None
 cluster_names = [f"Cluster.{i:02}" for i in range(k)]
 
+
 @pytest.fixture
 def numeric_cols():
-    return ['x', 'y', 'z']
+    return ["x", "y", "z"]
+
 
 @pytest.fixture
 def categ_cols():
-    return ['a', 'b', 'c']
+    return ["a", "b", "c"]
 
 
 @pytest.fixture

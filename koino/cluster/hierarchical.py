@@ -51,7 +51,6 @@ def fancy_dendrogram(*args, **kwargs):
 
 
 class HierarchicalClustering(BaseEstimator, ClusterMixin, TransformerMixin):
-
     def __init__(self, max_d=10, metric="euclidean", method="ward"):
         self.max_distance = max_d
         self.prediction_dist = None
@@ -90,7 +89,7 @@ class HierarchicalClustering(BaseEstimator, ClusterMixin, TransformerMixin):
             # p=12,
             truncate_mode=None,
             show_leaf_counts=False,  # otherwise numbers in brackets are counts
-            leaf_rotation=90.,
+            leaf_rotation=90.0,
             annotate_above=2 * distance // 3,
             max_d=distance,
             ax=ax,
@@ -104,7 +103,7 @@ class HierarchicalClustering(BaseEstimator, ClusterMixin, TransformerMixin):
         plt.clf()
 
     def plot_knee(self, figures_dir, n_samples=100, transparent=False):
-        """ Plotting the difference in distance from combining children nodes
+        """Plotting the difference in distance from combining children nodes
         in the dendogram's parent node
 
         Parameters

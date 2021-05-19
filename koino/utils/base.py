@@ -21,19 +21,19 @@ def jaccard(a: Union[set, np.ndarray], b: Union[set, np.ndarray]) -> float:
 def weighted_value_counts(
     serie: pd.Series, weights: Optional[pd.Series] = None, pretty: bool = False
 ) -> pd.Series:
-    """ Compute the weighted counts for each unique value of (presumably
-     categorical) Series.
+    """Compute the weighted counts for each unique value of (presumably
+    categorical) Series.
 
-     Parameters
-     ----------
-     serie: pandas Series
-     weights: pandas Series
-     pretty: bool
+    Parameters
+    ----------
+    serie: pandas Series
+    weights: pandas Series
+    pretty: bool
 
-     Returns
-     -------
-     value_weight: pandas Series
-     """
+    Returns
+    -------
+    value_weight: pandas Series
+    """
     if weights is None:
         return serie.value_counts()
 
@@ -61,14 +61,14 @@ def weighted_value_counts(
 def remove_missing(
     df: pd.DataFrame, return_mask: bool = False, raise_error: bool = True
 ) -> pd.DataFrame:
-    """ Sanity check in case we forgot something or did not impute
+    """Sanity check in case we forgot something or did not impute
     missing values. Easiest solution is to remove corresponding rows,
     instead of filling with zeros which biases the analysis.
 
     Returns
     -------
     df: Complete dataframe
-    mask: kept indices """
+    mask: kept indices"""
     missing = df.isnull()
     num_missing = missing.sum(axis=0)
     if num_missing.any():

@@ -85,7 +85,7 @@ def infer_cluster_names(
     column: Optional[str] = None,
     sep: str = ":",
 ) -> List[str]:
-    """ Only check n_seed neighbors: if they all agree take
+    """Only check n_seed neighbors: if they all agree take
     vote, otherwise take closest one's label.
 
     Parameters
